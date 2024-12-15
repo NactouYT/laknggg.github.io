@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - LeLe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #ffb3c1, #ff9a9e);
+            background-size: 300% 300%;
+            animation: gradientAnimation 15s ease infinite;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        @keyframes gradientAnimation {
+            0% { background: linear-gradient(45deg, #ffb3c1, #ff9a9e); }
+            25% { background: linear-gradient(45deg, #fbc2eb, #a6c1ee); }
+            50% { background: linear-gradient(45deg, #d4e1f1, #ffb6b9); }
+            75% { background: linear-gradient(45deg, #ffc3a0, #f8b5a4); }
+            100% { background: linear-gradient(45deg, #ffb3c1, #ff9a9e); }
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem;
+            position: relative;
+        }
+        /* Animation modifiée pour le logo */
+        .logo img {
+            width: 100px;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            animation: bounce 2s infinite, rotate 4s infinite linear;
+            border-radius: 50%;  /* Bords arrondis pour le logo */
+            cursor: pointer;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        nav {
+            margin: 0 auto;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline-block;
+            margin: 0 1rem;
+        }
+        nav ul li a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #333;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #ff6f61;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+        }
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0 0 1rem;
+            animation: fadeIn 2s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin: 0 0 2rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #ff6f61;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+        .btn:hover {
+            background: #e55b50;
+            transform: scale(1.1);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.3);
+        }
+        footer {
+            text-align: center;
+            margin-top: auto;
+            padding: 1rem;
+            background: #333;
+            color: white;
+        }
+        .hidden {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s, transform 1s;
+        }
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .news {
+            text-align: center;
+            margin: 3rem 1rem;
+            padding: 2rem;
+            background-color: #ffeb3b;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .news h2 {
+            font-size: 2rem;
+            color: #d32f2f;
+            margin-bottom: 1rem;
+        }
+        .news p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+        .discord-text {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #7289da;
+            position: relative;
+            display: inline-block;
+            animation: circleMove 4s infinite ease-in-out;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+
+            top: 4rem;  /* Déplace l'élément de 2rem vers le bas */
+        }
+        @keyframes circleMove {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(10px, -10px); }
+            50% { transform: translate(0, -20px); }
+            75% { transform: translate(-10px, -10px); }
+            100% { transform: translate(0, 0); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenue sur notre site - LeLe</h1>
+        <div class="logo">
+            <a href="https://discord.gg/xP4jmEVTHy" target="_blank">
+                <img src="https://i.imgur.com/mak6ZyG.png" alt="Logo LeLe"> <!-- Nouveau logo -->
+            </a>
+        </div>
+        <div>
+            <a href="https://discord.gg/xP4jmEVTHy" target="_blank">
+                <span class="discord-text">Discord</span>
+            </a>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="https://www.youtube.com/@KNGLELE" target="_blank">Chaîne YouTube</a></li>
+        </ul>
+    </nav>
+    <section class="hero">
+        <h1 class="hidden">Découvre des vidéos incroyables</h1>
+        <p class="hidden">Plonge dans l'univers de <strong>LeLe</strong> et abonne-toi pour plus de contenu.</p>
+        <a href="index3.html" class="btn hidden">Voir les vidéos !</a>
+    </section>
+    <section class="news">
+        <h2>News❤️:</h2>
+        <p>Les nouvelles fonctionnalités arrivent bientôt sur le site ! Nous travaillons sur de nouveaux projets pour offrir une meilleure expérience utilisateur. Restez connectés pour plus de mises à jour excitantes et des surprises à venir !</p>
+    </section>
+    <footer>
+        &copy; 2024 Nactou. Tous droits réservés.
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            });
+            document.querySelectorAll('.hero h1, .hero p, .btn').forEach(element => {
+                element.classList.add('hidden');
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html> 
+<html lang="fr"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>L'équipe</title> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"> 
+    <style> 
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Poppins', sans-serif; 
+            background: linear-gradient(45deg, #ffb3c1, #ff9a9e); 
+            background-size: 300% 300%; 
+            animation: gradientAnimation 15s ease infinite; 
+            color: #333; 
+            display: flex; 
+            flex-direction: column; 
+            min-height: 100vh; 
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes gradientAnimation { 
+            0% { background: linear-gradient(45deg, #ffb3c1, #ff9a9e); } 
+            25% { background: linear-gradient(45deg, #fbc2eb, #a6c1ee); } 
+            50% { background: linear-gradient(45deg, #d4e1f1, #ffb6b9); } 
+            75% { background: linear-gradient(45deg, #ffc3a0, #f8b5a4); } 
+            100% { background: linear-gradient(45deg, #ffb3c1, #ff9a9e); } 
+        }
+
+        /* Header */
+        header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 2rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        .logo img {
+            height: 150px; 
+        }
+        
+        .nono {
+            position: absolute; 
+            top: 20px; 
+            left: 200px;
+            margin-top: 0px; 
+            padding: 1rem 2rem; 
+            background: #ce3801; 
+            color: #fff; 
+            text-decoration: none; 
+            border-radius: 25px; 
+            font-weight: 600; 
+            transition: background 0.3s ease; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+
+        }
+
+        /* Video container */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        iframe {
+            width: 100vw;
+            height: 100vh;
+            border: none;
+        }
+
+        /* Navigation buttons */
+        .btn-navigation {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+            color: white;
+            font-size: 2rem;
+            padding: 1rem 2rem;
+            border: none;
+            cursor: pointer;
+            z-index: 20;
+            border-radius: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn-prev {
+            left: 20px;
+        }
+
+        .btn-next {
+            right: 20px;
+        }
+
+        /* Hover effects for navigation buttons */
+        .btn-navigation:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.1);
+        }
+
+        /* Active state for navigation buttons */
+        .btn-navigation:active {
+            background: rgba(255, 255, 0.6);
+        }
+
+        /* Back button */
+        .btn-back { 
+            position: absolute; 
+            top: 20px; 
+            left: 550px;
+            margin-top: 900px; 
+            padding: 1rem 2rem; 
+            background: #ff6f61; 
+            color: #fff; 
+            text-decoration: none; 
+            border-radius: 25px; 
+            font-weight: 600; 
+            transition: background 0.3s ease; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+        }
+
+        .btn-back:hover { 
+            background: #e55b50; 
+        }
+    </style> 
+</head> 
+<body>
+
+    <!-- Header with logo -->
+    <header>
+        <div class="nono">
+            <h1>SHORTS - LeLe</h1>
+        </div>
+        <div class="logo">
+            <a href="https://www.youtube.com/@KNGLELE/shorts" target="_blank">
+                <img src="https://i.imgur.com/EcA9am1.png" alt="Logo LeLe">
+            </a>
+        </div>
+    </header>
+
+    <!-- Video Container -->
+    <div class="video-container">
+        <div style="position:relative; width:100%; height:100%;">
+            <iframe allow="fullscreen" allowfullscreen id="video-frame" src="https://streamable.com/e/rhz809?" style="border:none; position:absolute; left:0px; top:0px;"></iframe>
+        </div>
+
+        <!-- Navigation buttons -->
+        <button class="btn-navigation btn-prev" onclick="changeVideo(-1)">&#8592; Précédente</button>
+        <button class="btn-navigation btn-next" onclick="changeVideo(1)">Suivante &#8594;</button>
+    </div>
+
+    <!-- Button to go back to menu -->
+    <a href="index3.html" class="btn-back">Retour au menu vidéo !</a> 
+
+    <script>
+        const videoList = [
+            "https://streamable.com/e/rhz809?", // Vidéo 1
+            "https://streamable.com/e/xoow5f?",
+            "https://streamable.com/e/j2rqv6",
+            "https://streamable.com/e/507z1k",
+            "https://streamable.com/e/qxzdrg",
+            "https://streamable.com/e/bzpe35",
+            "https://streamable.com/e/p0s5mz",
+            "https://streamable.com/e/fcd0zz",
+            "https://streamable.com/e/6wdphe",
+            "https://streamable.com/e/t1d9zc"
+        ];
+
+        let currentVideoIndex = 0;
+
+        // Fonction pour changer la vidéo
+        function changeVideo(direction) {
+            currentVideoIndex = (currentVideoIndex + direction + videoList.length) % videoList.length;
+            const iframe = document.getElementById('video-frame');
+            
+            // Si la vidéo n'est pas la première, on ajoute le paramètre autoplay
+            if (currentVideoIndex !== 0) {
+                iframe.src = videoList[currentVideoIndex] + "?autoplay=1";  // Ajout du paramètre autoplay pour démarrer la lecture
+            } else {
+                iframe.src = videoList[currentVideoIndex];  // Pas d'autoplay pour la première vidéo
+            }
+        }
+    </script>
+
+</body> 
+</html>

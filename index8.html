@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidéo en plein écran</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            position: relative;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Vidéo YouTube en plein écran */
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Flèche retour, cachée par défaut */
+        #backArrow {
+            position: fixed;
+            left: 20px; /* Positionnée à gauche */
+            top: 50%; /* Centrée verticalement */
+            transform: translateY(-50%); /* Centrage exact */
+            width: 40px;
+            height: 40px;
+            background-color: #ff6f61;
+            color: white;
+            display: none; /* Initialement cachée */
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 24px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        /* L'effet de survol de la flèche */
+        #backArrow:hover {
+            transform: scale(1.1) translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+    <!-- Vidéo YouTube en plein écran -->
+    <iframe id="youtubePlayer" src="https://www.youtube.com/embed/3wE4GbWp1zM?si=prTbP-rMWx1-wjPA" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+    <!-- Flèche pour revenir à index3.html -->
+    <div id="backArrow" onclick="window.location.href='index3.html'">↩</div>
+
+    <script>
+        // Fonction pour afficher la flèche dès que la souris bouge
+        document.addEventListener('mousemove', function() {
+            var arrow = document.getElementById('backArrow');
+            arrow.style.display = 'flex';  // La flèche devient visible dès que la souris bouge
+        });
+    </script>
+</body>
+</html>

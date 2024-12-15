@@ -1,0 +1,173 @@
+<!DOCTYPE html> 
+<html lang="fr"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Choisir une vidéo - LeLe</title> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"> 
+    <style> 
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Poppins', sans-serif; 
+            background: linear-gradient(45deg, #ffb3c1, #ff9a9e); 
+            background-size: 300% 300%; 
+            animation: gradientAnimation 15s ease infinite; 
+            color: #333; 
+            display: flex; 
+            flex-direction: column; 
+            min-height: 100vh; 
+        } 
+        @keyframes gradientAnimation { 
+            0% { background: linear-gradient(45deg, #ffb3c1, #ff9a9e); } 
+            25% { background: linear-gradient(45deg, #fbc2eb, #a6c1ee); } 
+            50% { background: linear-gradient(45deg, #d4e1f1, #ffb6b9); } 
+            75% { background: linear-gradient(45deg, #ffc3a0, #f8b5a4); } 
+            100% { background: linear-gradient(45deg, #ffb3c1, #ff9a9e); } 
+        } 
+        header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 2rem; 
+        } 
+        nav { 
+            margin: 0 auto; 
+            text-align: center; 
+        } 
+        nav ul { 
+            list-style: none; 
+            padding: 0; 
+        } 
+        nav ul li { 
+            display: inline-block; 
+            margin: 0 1rem; 
+        } 
+        nav ul li a { 
+            text-decoration: none; 
+            font-weight: 600; 
+            color: #333; 
+            font-size: 1.2rem; 
+            transition: color 0.3s ease; 
+        } 
+        nav ul li a:hover { 
+            color: #ff6f61; 
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.2); 
+        } 
+        .video-list { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+            gap: 1rem; 
+            padding: 2rem; 
+            margin-top: 2rem; 
+        } 
+        .video-item { 
+            background-color: white; 
+            padding: 1rem; 
+            border-radius: 15px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+            text-align: center; 
+            cursor: pointer; 
+            transition: transform 0.3s ease; 
+        } 
+        .video-item:hover { 
+            transform: scale(1.05); 
+            box-shadow: 0 6px 10px rgba(0,0,0,0.2); 
+        } 
+        .video-item img { 
+            width: 100%; 
+            height: auto; 
+            border-radius: 10px; 
+            margin-bottom: 1rem; 
+        } 
+        .btn-back { 
+            display: inline-block; 
+            padding: 1rem 2rem; 
+            background: #ff6f61; 
+            color: #fff; 
+            text-decoration: none; 
+            border-radius: 25px; 
+            font-weight: 600; 
+            transition: background 0.3s ease, transform 0.2s ease; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2); 
+            margin: 2rem 0; 
+            text-align: center; 
+        } 
+        .btn-back:hover { 
+            background: #e55b50; 
+            transform: scale(1.1); 
+            box-shadow: 0 6px 8px rgba(0,0,0,0.3); 
+        } 
+        .btn-short { 
+            position: fixed; 
+            top: 20px; 
+            right: 20px; 
+            padding: 1rem 2rem; 
+            background: #5c6bc0; 
+            color: #fff; 
+            text-decoration: none; 
+            border-radius: 25px; 
+            font-weight: 600; 
+            transition: background 0.3s ease, transform 0.2s ease; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2); 
+            z-index: 1000; /* Assure que le bouton reste au-dessus des autres éléments */
+        } 
+        .btn-short:hover { 
+            background: #3f51b5; 
+            transform: scale(1.1); 
+            box-shadow: 0 6px 8px rgba(0,0,0,0.3); 
+        } 
+    </style> 
+</head> 
+<body> 
+    <header> 
+        <h1>Choisissez une vidéo à regarder</h1> 
+    </header> 
+    <section class="video-list"> 
+        <!-- Exemple d'éléments de vidéo -->
+        <div class="video-item" onclick="window.location.href='index2.html'"> 
+            <img src="https://i.imgur.com/kVsyCGm.png" alt="Vidéo 1"> 
+            <h3>TOP 1 SEULEMENT AVEC UNE VOITURE 🚗</h3> 
+        </div> 
+        <div class="video-item" onclick="window.location.href='index4.html'"> 
+            <img src="https://i.imgur.com/D7E3Iw4.png" alt="Vidéo 2"> 
+            <h3>JE DOIS DEVINER LE RANK DE CES 5 ABONNÉS</h3> 
+        </div>
+        <div class="video-item" onclick="window.location.href='index6.html'"> 
+            <img src="https://i.imgur.com/Vrbt69X.png" alt="Vidéo 2"> 
+            <h3>JE DOIS DEVINER LE RANK DE CES 5 ABONNÉS</h3> 
+        </div> 
+        <div class="video-item" onclick="window.location.href='index7.html'"> 
+            <img src="https://i.imgur.com/luiS00w.png" alt="Vidéo 2"> 
+            <h3>JE DOIS DEVINER LE RANK DE CES 5 ABONNÉS</h3> 
+        </div>
+         <div class="video-item" onclick="window.location.href='index8.html'"> 
+            <img src="https://i.imgur.com/0uWfAmz.png" alt="Vidéo 2"> 
+            <h3>JE DOIS DEVINER LE RANK DE CES 5 ABONNÉS</h3> 
+        </div> <div class="video-item" onclick="window.location.href='index10.html'"> 
+            <img src="https://i.imgur.com/vW2Nr5P.png" alt="Vidéo 2"> 
+            <h3>JE DOIS DEVINER LE RANK DE CES 5 ABONNÉS</h3> 
+        </div> <div class="video-item" onclick="window.location.href='index11.html'"> 
+            <img src="https://i.imgur.com/TQLvrhz.png" alt="Vidéo 2"> 
+            <h3>JE DOIS DEVINER LE RANK DE CES 5 ABONNÉS</h3> 
+        </div> <div class="video-item" onclick="window.location.href='index12.html'"> 
+            <img src="https://i.imgur.com/PGU0dSX.png" alt="Vidéo 2"> 
+            <h3>JE DOIS DEVINER LE RANK DE CES 5 ABONNÉS</h3> 
+        </div> 
+        <div class="video-item" onclick="window.location.href='index13.html'"> 
+            <img src="https://i.imgur.com/SiOQECP.png" alt="Vidéo 2"> 
+            <h3>JE DOIS DEVINER LE RANK DE CES 5 ABONNÉS</h3> 
+        </div>  <div class="video-item" onclick="window.location.href='index14.html'"> 
+            <img src="https://i.imgur.com/UnjfUfS.png" alt="Vidéo 2"> 
+            <h3>JE DOIS DEVINER LE RANK DE CES 5 ABONNÉS</h3> 
+        </div>  <div class="video-item" onclick="window.location.href='index15.html'"> 
+            <img src="https://i.imgur.com/4Or8Sug.png" alt="Vidéo 2"> 
+            <h3>JE DOIS DEVINER LE RANK DE CES 5 ABONNÉS</h3> 
+        </div>    
+        <!-- Ajouter plus de vidéos ici -->
+    </section> 
+    <!-- Bouton "Short" en haut à droite -->
+    <a href="index5.html" class="btn-short">Short</a>
+    <a href="index.html" class="btn-back">Retour à l'accueil</a> 
+</body> 
+</html>
